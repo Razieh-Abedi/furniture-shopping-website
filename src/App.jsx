@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.js";
 // import "wojtekmaj/react-daterange-picker/dist/DateRangePicker.cc";
+import Login from "./pages/Login";
 debugger;
 function App() {
   const products = [
@@ -58,6 +59,13 @@ function App() {
               img={item.img}
             />
           ))}
+        </div>
+      </div>
+      <div className="container m-auto d-block form-container w-25">
+        <div className="row">
+          <div className="col">
+            <Login />
+          </div>
         </div>
       </div>
     </div>
