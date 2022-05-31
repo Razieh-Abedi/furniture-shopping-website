@@ -40,6 +40,9 @@ code {
 .App-link {
   color: #61dafb;
 }
+.card {
+  width: 18rem;
+}
 
 @keyframes App-logo-spin {
   from {
