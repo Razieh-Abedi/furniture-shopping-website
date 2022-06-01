@@ -1,4 +1,5 @@
 import React from "react";
+
 function Card({ id, img, price, name, des }) {
   return (
     <div className="card" id={id}>
