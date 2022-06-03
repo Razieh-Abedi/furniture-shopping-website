@@ -52,3 +52,11 @@ code {
     transform: rotate(360deg);
   }
 }
+.example {
+  width: 40px;
+  height: 32px;
+}
+.example2 {
+  width: 24px;
+  height: 24px;
+}
