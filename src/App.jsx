@@ -1,24 +1,25 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import Header from "./components/Header";
-
+import Footer from "./components/Footer";
 import Login from "./pages/Login";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import HeaderMain from "./components/HeaderMain";
+import Header from "./components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Checkout from "./pages/Checkout";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <HeaderMain />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/contact" element={<Contact/>} /> */}
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

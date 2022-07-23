@@ -1,8 +1,6 @@
 import React from "react";
-import DateRangePicker from '@wojtekmaj/react-daterange-picker';
+import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import Card from "../components/Card";
-import Header from "../components/Header";
-
 
 function Home() {
   // const [value, onChange] = useState([new Date(), new Date()]);
@@ -20,7 +18,7 @@ function Home() {
       name: "Double Room",
       id: "double-room",
       img:
-        "https://hotel.hollaramconcept.com/storage/rooms/double-bedded-room-standard.jpg",
+        "https://www.princehotels.com/tokyo/wp-content/uploads/sites/9/2019/07/14_tokyo-prince-hotel-rooms-4-8FSuperiorTwinRoom-noon-.jpg",
       price: "40",
       des: "This is the description for a double room",
     },
@@ -41,10 +39,8 @@ function Home() {
     },
   ];
 
-
   return (
     <div>
-   
       <div>
         <DateRangePicker />
       </div>
@@ -52,11 +48,13 @@ function Home() {
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4">
           {products.map((item) => (
             <Card
-              name={item.name}
-              id={item.id}
-              price={item.price}
-              des={item.des}
-              img={item.img}
+              key={item.id}
+              // name={item.name}
+              // id={item.id}
+              // price={item.price}
+              // des={item.des}
+              // img={item.img}
+              {...item}
             />
           ))}
         </div>
