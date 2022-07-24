@@ -36,7 +36,9 @@ function Header() {
             </li>
           </ul>
 
-          <div className="col-md-3 text-end">
+          <div className="col-md-3 text-end position-relative">
+            <span className="me-1">Favorites:</span>
+            <span className="me-3">0</span>
             {!isLogin ? (
               <button type="button" className="btn btn-primary">
                 Sign-up
