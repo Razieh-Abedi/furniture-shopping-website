@@ -10,14 +10,18 @@ import Checkout from "./pages/Checkout";
 import Contact from "./pages/Contact";
 
 function App() {
+  const [favorites, setFavorites] = useState(0);
+  const addToFavorites = () => {
+    setFavorites = favorites + 1;
+  };
   return (
     <BrowserRouter>
-      <Header />
+      <Header addToFavorites={addToFavorites} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -25,13 +29,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <div className="App">
-     
-
-         <Login />
-      </div>
-
-    </div> */
-}

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import Card from "../components/Card";
 
-function Home() {
+function Home({ addToFavorites }) {
   // const [value, onChange] = useState([new Date(), new Date()]);
   // onChange={onChange} value={value}
   const products = [
@@ -55,6 +55,7 @@ function Home() {
               // des={item.des}
               // img={item.img}
               {...item}
+              clickLike={addToFavorites}
             />
           ))}
         </div>
