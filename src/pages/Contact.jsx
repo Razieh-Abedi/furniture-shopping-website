@@ -1,11 +1,15 @@
 import React from "react";
-// import contact-img from src/assets/media/images;
+import pic1 from "../assets/media/images/letter.jpg";
 function Contact() {
   return (
     <div className="contact1">
-      <div className="container-contact1">
-        <div className="contact1-pic js-tilt" data-tilt>
-          <img src="{contact-img}" alt="IMG" />
+      <div className="container-contact1 px-0">
+        <div className="contact1-pic js-tilt w-50" data-tilt>
+          <img
+            src={pic1}
+            alt="an image of a letter"
+            className="rounded-1"
+          />
         </div>
 
         <div className="contact1-form validate-form">

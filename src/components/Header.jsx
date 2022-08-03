@@ -2,7 +2,7 @@ import { Button } from "bootstrap";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({favorites}) {
   const isLogin = true;
   return (
     <div>
@@ -38,7 +38,7 @@ function Header() {
 
           <div className="col-md-3 text-end position-relative">
             <span className="me-1">Favorites:</span>
-            <span className="me-3">0</span>
+            <span className="me-3">{favorites}</span>
             {!isLogin ? (
               <button type="button" className="btn btn-primary">
                 Sign-up

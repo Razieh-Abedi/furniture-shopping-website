@@ -55,7 +55,7 @@ function Home({ addToFavorites }) {
               // des={item.des}
               // img={item.img}
               {...item}
-              clickLike={addToFavorites}
+              addToFavorites={addToFavorites}
             />
           ))}
         </div>
