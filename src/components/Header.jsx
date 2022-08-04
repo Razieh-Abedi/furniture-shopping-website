@@ -2,7 +2,7 @@ import { Button } from "bootstrap";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Header({favorites}) {
+function Header({ favorites }) {
   const isLogin = true;
   return (
     <div>
@@ -40,11 +40,11 @@ function Header({favorites}) {
             <span className="me-1">Favorites:</span>
             <span className="me-3">{favorites}</span>
             {!isLogin ? (
-              <button type="button" className="btn btn-primary">
+              <button type="button" className="btn btn-warning">
                 Sign-up
               </button>
             ) : (
-              <button type="button" className="btn btn-outline-primary me-2">
+              <button type="button" className="btn btn-info text-dark me-2">
                 <Link to="/login">Login</Link>
               </button>
             )}

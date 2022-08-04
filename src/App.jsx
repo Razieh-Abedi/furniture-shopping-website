@@ -12,11 +12,12 @@ import Contact from "./pages/Contact";
 function App() {
   const [favorites, setFavorites] = useState(0);
   const addToFavorites = () => {
-    setFavorites (favorites + 1);
+    setFavorites(favorites + 1);
   };
+
   return (
     <BrowserRouter>
-      <Header favorites={favorites}  />
+      <Header favorites={favorites} />
       <Routes>
         <Route path="/" element={<Home addToFavorites={addToFavorites} />} />
         <Route path="/login" element={<Login />} />

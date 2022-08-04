@@ -13,6 +13,10 @@ function Home({ addToFavorites }) {
         "https://www.berjayahotel.com/sites/default/files/hotel-room-type/london/c1-classic-single-room.jpg",
       price: "20",
       des: "This is the description for a single room",
+      rate:{
+        point:4,
+        count:100
+      }
     },
     {
       name: "Double Room",
@@ -21,6 +25,10 @@ function Home({ addToFavorites }) {
         "https://www.princehotels.com/tokyo/wp-content/uploads/sites/9/2019/07/14_tokyo-prince-hotel-rooms-4-8FSuperiorTwinRoom-noon-.jpg",
       price: "40",
       des: "This is the description for a double room",
+      rate:{
+        point:3.5,
+        count:20
+      }
     },
     {
       name: "Queen Room",
@@ -28,6 +36,10 @@ function Home({ addToFavorites }) {
       img: "https://sierrahotel.ph/v2/wp-content/uploads/room-queenroom.jpg",
       price: "60",
       des: "This is the description for a queen room.",
+      rate:{
+        point:5,
+        count:7
+      }
     },
     {
       name: "King Room",
@@ -36,8 +48,13 @@ function Home({ addToFavorites }) {
         "https://media-cdn.tripadvisor.com/media/photo-s/01/e2/a5/86/hotel-room-with-king.jpg",
       price: "80",
       des: "This is the description for a king room.",
+      rate:{
+        point:3,
+        count:306
+      }
     },
   ];
+  
 
   return (
     <div>
