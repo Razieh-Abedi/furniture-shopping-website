@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Header({ favorites, cartProducts }) {
-  // const isLogin = true;
   const [loginLogout, setLoginLogout] = useState(false);
   const changeLogin = () => {
     setLoginLogout(!loginLogout);

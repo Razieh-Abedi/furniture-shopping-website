@@ -32,7 +32,15 @@ function Footer() {
               </a>
             </li>
           </ul>
-          <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+          <div className="text-center">
+            <a
+              href="https://raziwebdeveloper.com/"
+              target="_blank"
+              className="text-muted text-decoration-none"
+            >
+              Developed with ❤ by raziwebdeveloper.com
+            </a>
+          </div>
         </footer>
       </div>
     </div>

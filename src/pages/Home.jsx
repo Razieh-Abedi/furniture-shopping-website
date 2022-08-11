@@ -12,47 +12,47 @@ function Home({
   // onChange={onChange} value={value}
   const products = [
     {
-      name: "Single Room",
-      id: "single-room",
+      name: "Office Chair",
+      id: "1",
       img:
-        "https://www.berjayahotel.com/sites/default/files/hotel-room-type/london/c1-classic-single-room.jpg",
-      price: "20",
-      des: "This is the description for a single room",
+        "https://www.officegapsupplymalaysia.com/wp-content/uploads/2018/12/WhatsApp-Image-2018-12-12-at-11.54.21-AM-5-768x768.jpeg",
+      price: "50",
+      des: "Office Mesh Chair Model : KT-PMC4(B)",
       rate: {
         point: 4,
         count: 100,
       },
     },
     {
-      name: "Double Room",
-      id: "double-room",
+      name: "Office Desk",
+      id: "2",
       img:
-        "https://www.princehotels.com/tokyo/wp-content/uploads/sites/9/2019/07/14_tokyo-prince-hotel-rooms-4-8FSuperiorTwinRoom-noon-.jpg",
-      price: "40",
-      des: "This is the description for a double room",
+        "https://secure.img1-fg.wfcdn.com/im/94368078/compr-r85/5800/58003400/default.jpg",
+      price: "37",
+      des: "LARGE DESKS | FREE SHIPPING OVER",
       rate: {
         point: 3.5,
         count: 20,
       },
     },
     {
-      name: "Queen Room",
-      id: "queen-room",
-      img: "https://sierrahotel.ph/v2/wp-content/uploads/room-queenroom.jpg",
-      price: "60",
-      des: "This is the description for a queen room.",
+      name: "Office Cabinet",
+      id: "3",
+      img:
+        "https://cdn.shopify.com/s/files/1/0267/6850/7073/products/42_419aaaff-b798-400c-b554-45b7e268ae89_740x.png?v=1637294455",
+      price: "62",
+      des: "Frans Office File Cabinet 2 Door 2 Drawer Storage Organization",
       rate: {
         point: 5,
         count: 7,
       },
     },
     {
-      name: "King Room",
-      id: "king-room",
-      img:
-        "https://media-cdn.tripadvisor.com/media/photo-s/01/e2/a5/86/hotel-room-with-king.jpg",
-      price: "80",
-      des: "This is the description for a king room.",
+      name: "Office Copy Machine",
+      id: "4",
+      img: "https://m.media-amazon.com/images/I/81-asnrclJL._AC_SY679_.jpg",
+      price: "980",
+      des: "Xerox Workcentre 7545 Color Copier Machine",
       rate: {
         point: 3,
         count: 306,
@@ -63,7 +63,7 @@ function Home({
   return (
     <div>
       <div className="text-center">
-        <DateRangePicker  />
+        <DateRangePicker />
       </div>
       <div className="container my-3">
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4">
