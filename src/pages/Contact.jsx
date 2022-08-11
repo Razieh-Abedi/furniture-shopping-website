@@ -67,7 +67,7 @@ function Contact() {
           </div>
 
           <div className="container-contact1-form-btn">
-            <button className="contact1-form-btn">
+            <button className="contact1-form-btn ">
               <span>
                 Send Email
                 <i className="fa fa-long-arrow-right" aria-hidden="true"></i>

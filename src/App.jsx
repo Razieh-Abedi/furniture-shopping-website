@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Checkout from "./pages/Checkout";
+// import Checkout from "./pages/Checkout";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/checkout" element={<Checkout />} />
+        {/* <Route path="/checkout" element={<Checkout />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

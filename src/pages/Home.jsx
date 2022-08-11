@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import Card from "../components/Card";
 
-function Home({ increaseFavorites , decreaseFavorites, increaseCartProducts, decreaseCartProducts}) {
+function Home({
+  increaseFavorites,
+  decreaseFavorites,
+  increaseCartProducts,
+  decreaseCartProducts,
+}) {
   // const [value, onChange] = useState([new Date(), new Date()]);
   // onChange={onChange} value={value}
   const products = [
@@ -57,8 +62,8 @@ function Home({ increaseFavorites , decreaseFavorites, increaseCartProducts, dec
 
   return (
     <div>
-      <div>
-        <DateRangePicker />
+      <div className="text-center">
+        <DateRangePicker  />
       </div>
       <div className="container my-3">
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4">
@@ -75,7 +80,6 @@ function Home({ increaseFavorites , decreaseFavorites, increaseCartProducts, dec
               decreaseFavorites={decreaseFavorites}
               increaseCartProducts={increaseCartProducts}
               decreaseCartProducts={decreaseCartProducts}
-
             />
           ))}
         </div>
