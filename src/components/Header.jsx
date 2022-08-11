@@ -1,8 +1,8 @@
-import { Button } from "bootstrap";
-import React, { useState } from "react";
+// import { Button } from "bootstrap";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Header({ favorites }) {
+function Header({ favorites, cartProducts }) {
   const isLogin = true;
   return (
     <div>
@@ -20,16 +20,6 @@ function Header({ favorites }) {
               </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 link-dark">
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2 link-dark">
-                FAQs
-              </a>
-            </li>
-            <li>
               <Link to="/contact" className="nav-link px-2 link-dark">
                 Contact Us
               </Link>
@@ -37,14 +27,22 @@ function Header({ favorites }) {
           </ul>
 
           <div className="col-md-3 text-end position-relative">
-            <span className="me-1">Favorites:</span>
-            <span className="me-3">{favorites}</span>
+            <button type="button" class="btn btn-primary position-relative">
+              Cart
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {cartProducts}
+                <span class="visually-hidden">products in the cart</span>
+              </span>
+            </button>
+            <button type="button" class="btn btn-primary ms-2">
+              Favorites <span class="badge bg-secondary">{favorites}</span>
+            </button>
             {!isLogin ? (
-              <button type="button" className="btn btn-warning">
+              <button type="button" className="btn btn-warning ms-2">
                 Sign-up
               </button>
             ) : (
-              <button type="button" className="btn btn-info text-dark me-2">
+              <button type="button" className="btn btn-info text-dark ms-2">
                 <Link to="/login">Login</Link>
               </button>
             )}

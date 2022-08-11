@@ -11,15 +11,35 @@ import Contact from "./pages/Contact";
 
 function App() {
   const [favorites, setFavorites] = useState(0);
-  const addToFavorites = () => {
+  const increaseFavorites = () => {
     setFavorites(favorites + 1);
+  };
+  const decreaseFavorites = () => {
+    setFavorites(favorites - 1);
+  };
+  const [cartProducts, setCartProducts] = useState(0);
+  const increaseCartProducts = () => {
+    setCartProducts(cartProducts + 1);
+  };
+  const decreaseCartProducts = () => {
+    setCartProducts(cartProducts - 1);
   };
 
   return (
     <BrowserRouter>
-      <Header favorites={favorites} />
+      <Header favorites={favorites}  cartProducts={cartProducts}/>
       <Routes>
-        <Route path="/" element={<Home addToFavorites={addToFavorites} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              increaseFavorites={increaseFavorites}
+              decreaseFavorites={decreaseFavorites}
+              increaseCartProducts={increaseCartProducts}
+              decreaseCartProducts={decreaseCartProducts}
+            />
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />

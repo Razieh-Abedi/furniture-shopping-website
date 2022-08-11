@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
-function Card({ id, img, price, name, des, rate, addToFavorites }) {
-  // To change the heart icon when liked
+function Card({
+  id,
+  img,
+  price,
+  name,
+  des,
+  rate,
+  increaseFavorites,
+  decreaseFavorites,
+  increaseCartProducts,
+  decreaseCartProducts,
+}) {
+  //  To change the heart icon when liked
   const [heartState, setHeartState] = useState(false);
   const changeHeartIcon = () => {
     setHeartState(!heartState);
@@ -20,7 +31,11 @@ function Card({ id, img, price, name, des, rate, addToFavorites }) {
   };
   const heartClick = () => {
     changeLikes();
-    addToFavorites();
+    if (!heartState) {
+      increaseFavorites();
+    } else {
+      decreaseFavorites();
+    }
     changeHeartIcon();
   };
   // To change the border color of the card when clicked on
@@ -50,6 +65,7 @@ function Card({ id, img, price, name, des, rate, addToFavorites }) {
   const [qty, setQty] = useState(0);
   const addCartCount = () => {
     setQty(qty + 1);
+    increaseCartProducts();
   };
   //To subtract the quantity in the cart and hide the number section when the cart is empty
   const subtractCartCount = () => {
@@ -60,6 +76,7 @@ function Card({ id, img, price, name, des, rate, addToFavorites }) {
       }, 500);
     }
     setQty(qty - 1); //0
+    decreaseCartProducts();
   };
   const clickedOnAddToCart = () => {
     addCartCount();

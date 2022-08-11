@@ -384,3 +384,15 @@ textarea.input1 + .shadow-input1 {
     opacity: 1;
   }
 }
+/* log in page */
+#loginCard {
+  border-radius: 1 rem;
+  background-color: #b8c9d1;
+  font-family: serif;
+}
+#googleBtn {
+  background-color: #dd4b39;
+}
+#facebookBtn {
+  background-color: #3b5998;
+}
