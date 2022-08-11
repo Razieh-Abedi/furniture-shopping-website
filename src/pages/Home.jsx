@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DateRangePicker from "@wojtekmaj/react-daterange-picker";
+// import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import Card from "../components/Card";
 
 function Home({
@@ -61,10 +61,10 @@ function Home({
   ];
 
   return (
-    <div>
-      <div className="text-center">
+    <div className="py-3">
+      {/* <div className="text-center mb-5">
         <DateRangePicker />
-      </div>
+      </div> */}
       <div className="container my-3">
         <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4">
           {products.map((item) => (

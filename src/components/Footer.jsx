@@ -2,46 +2,55 @@ import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <div class="container">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-muted">
-                Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-muted">
-                Features
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-muted">
-                Pricing
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-muted">
-                FAQs
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link px-2 text-muted">
-                About
-              </a>
-            </li>
-          </ul>
-          <div className="text-center">
-            <a
-              href="https://raziwebdeveloper.com/"
-              target="_blank"
-              className="text-muted text-decoration-none"
-            >
-              Developed with ❤ by raziwebdeveloper.com
-            </a>
-          </div>
-        </footer>
+    <div className="bg-light border border-top-1">
+      <div className="container text-center pt-2 mt-3">
+        <section className="mb-1">
+          <a
+            className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          >
+            <i className="bi bi-facebook me-2"></i>
+          </a>
+
+          <a
+            className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          >
+            <i class="bi bi-twitter"></i>
+          </a>
+
+          <a
+            className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          >
+            <i className="bi bi-google me-2"></i>
+          </a>
+
+          <a
+            className="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+          >
+            <i class="bi bi-instagram"></i>
+          </a>
+        </section>
+        <hr />
+      </div>
+      <div className="text-center p-2">
+        <a
+          href="https://raziwebdeveloper.com/"
+          target="_blank"
+          className="text-muted text-decoration-none"
+        >
+          Developed with ❤ by raziwebdeveloper.com
+        </a>
       </div>
     </div>
   );

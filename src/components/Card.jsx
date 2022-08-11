@@ -44,17 +44,40 @@ function Card({
     setBorderState(!borderState);
   };
   const borderStyle = {
-    border: borderState ? "2px solid green" : "1px solid black",
+    // border: borderState ? "2px solid green" : "1px solid black",
+    border: borderState ? "1px solid black" : "1px solid light-gray",
   };
-  //To show/hide the description when clicked on read more button
+  //To show the description when clicked on read more button
   const [productDes, setProductDes] = useState(false);
+  const [desBtn, setDesBtn] = useState(false);
   const desDisplay = () => {
     setProductDes(!productDes);
+    setDesBtn(!desBtn);
+    setHideBtn(hideBtn)
   };
   const desStyle = {
     display: productDes ? "block" : "none",
     marginTop: "12px",
   };
+  const desBtnStyle = {
+    display: desBtn ? "none" : "block",
+  };
+  const hideDesStyle = {
+    display: hideBtn? "block":"none",
+  }
+  // const desBtnElement = ()=>{
+  //   (productDes)? 
+  // }
+  //To hide the description when clicked on read less button
+  const [hideBtn, setHideBtn] = useState(false);
+  // const [DesHide, setDesHide] = useState(false);
+  const desHideClicked = () => {
+    setHideBtn(!hideBtn);
+    // setDesHide(!DesHide);
+  };
+  // const hideDesStyle = {
+  //   display: (hideBtn)? "block":"none",
+  // }
   //To show the number section when clicked on add to cart button
   const [cartNumberState, setCartNumberState] = useState(false);
   const cartNumberStyle = {
@@ -106,9 +129,15 @@ function Card({
           </div>
           <p>Price: {price} $</p>
           <p className="card-text">{des}</p>
-          <button className="btn btn-info" onClick={desDisplay}>
+          <button
+            className="btn btn-info"
+            style={desBtnStyle}
+            onClick={desDisplay}
+          >
             Read More
           </button>
+          <button className="btn btn-warning" style={hideDesStyle} on>Read Less</button>
+          <button className="btn btn-warning" style={hideDesStyle} onClick={desHideClicked}>Read Less</button>
           <p style={desStyle}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Exercitationem distinctio, voluptate quisquam numquam blanditiis
