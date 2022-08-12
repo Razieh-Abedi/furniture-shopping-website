@@ -32,7 +32,7 @@ function Header({ favorites, cartProducts }) {
                   <button
                     type="button"
                     className="btn btn-info text-dark "
-                  ></button>
+                  >Log in</button>
                 ) : (
                   <button type="button" className="btn  btn-warning ">
                     Sign-up

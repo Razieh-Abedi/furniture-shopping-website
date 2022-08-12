@@ -40,14 +40,14 @@ function Login() {
                 </label>
               </div>
               <button
-                className="btn btn-primary btn-lg btn-block"
+                className="btn btn-primary btn-lg "
                 type="submit"
               >
                 Login
               </button>
               <hr className="my-4" />
               <button
-                className="btn btn-lg btn-block w-100 mb-2"
+                className="btn btn-lg w-100 mb-2"
                 type="submit"
                 id="googleBtn"
               >

@@ -26,26 +26,9 @@ code {
   }
 }
 
-/* footer */
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-.bi {
-  vertical-align: -0.125em;
-  fill: currentColor;
-}
 /* Header Bootstrap core css */
-.bd-placeholder-img {
+/* .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
   -webkit-user-select: none;
@@ -57,9 +40,9 @@ code {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
-}
+}  */
 /* Header Custom styles for this template  */
-.form-control-dark {
+/* .form-control-dark {
   color: #fff;
   background-color: var(--bs-dark);
   border-color: var(--bs-gray);
@@ -82,7 +65,7 @@ code {
 
 .dropdown-toggle {
   outline: 0;
-}
+} */
 /* Contact page */
 .contact1 {
   width: 100%;

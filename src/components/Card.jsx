@@ -44,40 +44,32 @@ function Card({
     setBorderState(!borderState);
   };
   const borderStyle = {
-    // border: borderState ? "2px solid green" : "1px solid black",
-    border: borderState ? "1px solid black" : "1px solid light-gray",
+    border: borderState ? "1px solid yellow" : "1px solid black",
   };
   //To show the description when clicked on read more button
-  const [productDes, setProductDes] = useState(false);
-  const [desBtn, setDesBtn] = useState(false);
-  const desDisplay = () => {
-    setProductDes(!productDes);
-    setDesBtn(!desBtn);
-    setHideBtn(hideBtn)
+  const [textShow, setTextShow] = useState(false);
+  const textShowStyle = {
+    display: textShow ? "block" : "none",
   };
-  const desStyle = {
-    display: productDes ? "block" : "none",
-    marginTop: "12px",
+  const [readMoreBtn, setReadMoreBtn] = useState(false);
+  const readMoreBtnStyle = {
+    display: readMoreBtn ? "none" : "block",
   };
-  const desBtnStyle = {
-    display: desBtn ? "none" : "block",
+  const readMoreBtnClicked = () => {
+    setTextShow(!textShow);
+    setReadMoreBtn(!readMoreBtn);
+    setReadLessBtn(!readLessBtn);
   };
-  const hideDesStyle = {
-    display: hideBtn? "block":"none",
-  }
-  // const desBtnElement = ()=>{
-  //   (productDes)? 
-  // }
   //To hide the description when clicked on read less button
-  const [hideBtn, setHideBtn] = useState(false);
-  // const [DesHide, setDesHide] = useState(false);
-  const desHideClicked = () => {
-    setHideBtn(!hideBtn);
-    // setDesHide(!DesHide);
+  const [readLessBtn, setReadLessBtn] = useState(false);
+  const readLessBtnStyle = {
+    display: readLessBtn ? "block" : "none",
   };
-  // const hideDesStyle = {
-  //   display: (hideBtn)? "block":"none",
-  // }
+  const readLessBtnClicked = () => {
+    setReadLessBtn(!readLessBtn);
+    setTextShow(!textShow);
+    setReadMoreBtn(!readMoreBtn);
+  };
   //To show the number section when clicked on add to cart button
   const [cartNumberState, setCartNumberState] = useState(false);
   const cartNumberStyle = {
@@ -129,16 +121,21 @@ function Card({
           </div>
           <p>Price: {price} $</p>
           <p className="card-text">{des}</p>
-          <button
-            className="btn btn-info"
-            style={desBtnStyle}
-            onClick={desDisplay}
-          >
-            Read More
-          </button>
-          <button className="btn btn-warning" style={hideDesStyle} on>Read Less</button>
-          <button className="btn btn-warning" style={hideDesStyle} onClick={desHideClicked}>Read Less</button>
-          <p style={desStyle}>
+            <button
+              className="btn btn-info w-50 m-auto"
+              style={readMoreBtnStyle}
+              onClick={readMoreBtnClicked}
+            >
+              Read More
+            </button>
+            <button
+              className="btn btn-warning m-auto w-50"
+              style={readLessBtnStyle}
+              onClick={readLessBtnClicked}
+            >
+              Read Less
+            </button>
+          <p style={textShowStyle}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Exercitationem distinctio, voluptate quisquam numquam blanditiis
             repellendus ea consequatur. Repudiandae quasi, quis vero cum fugit
@@ -154,13 +151,13 @@ function Card({
             </button>
             <div style={cartNumberStyle} className="my-2">
               <button
-                className="btn btn-warning px-3 fs-3"
+                className="btn btn-warning px-3 fs-3 ms-2"
                 onClick={subtractCartCount}
               >
                 -
               </button>
-              <span className="btn btn-light px-3 fs-4">{qty}</span>
-              <button className="btn btn-info px-3 fs-3" onClick={addCartCount}>
+              <span className="btn btn-light px-3 fs-4 ms-2">{qty}</span>
+              <button className="btn btn-info px-3 fs-3 ms-2" onClick={addCartCount}>
                 +
               </button>
             </div>
