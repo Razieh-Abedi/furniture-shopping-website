@@ -39,17 +39,20 @@ function Header({ favorites, cartProducts }) {
                 )}
               </Link>
             </li> */}
-            <li className="nav-link px-2 link-dark"
-                onClick={changeLogin}>
-            {!loginLogout ? (
-                  <button type="button" className="btn btn-info text-dark ">
-                    <Link  to="/login">Log in</Link>
-                  </button>
-                ) : (
-                  <button type="button" className="btn  btn-warning ">
-                    <Link to="/">Sing out</Link>
-                  </button>
-                )}
+            <li className="nav-link px-2 link-dark" onClick={changeLogin}>
+              {!loginLogout ? (
+                <button type="button" className="btn btn-info text-dark">
+                  <Link to="/login" className="text-decoration-none text-dark">
+                    Log in
+                  </Link>
+                </button>
+              ) : (
+                <button type="button" className="btn  btn-warning ">
+                  <Link to="/" className="text-decoration-none text-dark">
+                    Sing out
+                  </Link>
+                </button>
+              )}
             </li>
           </ul>
 
