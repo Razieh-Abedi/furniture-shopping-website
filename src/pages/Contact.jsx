@@ -13,8 +13,6 @@ function Contact() {
         </div>
 
         <div className="contact1-form validate-form">
-          <span className="contact1-form-title">Get in touch</span>
-
           <div
             className="wrap-input1 validate-input"
             data-validate="Name is required"
@@ -68,10 +66,7 @@ function Contact() {
 
           <div className="container-contact1-form-btn">
             <button className="contact1-form-btn ">
-              <span>
-                Send Email
-                <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </span>
+              Send
             </button>
           </div>
         </div>
