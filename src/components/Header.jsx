@@ -1,12 +1,24 @@
-// import { Button } from "bootstrap";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Header({ favorites, cartProducts }) {
+  //to change login/logout buttons
   const [loginLogout, setLoginLogout] = useState(false);
   const changeLogin = () => {
     setLoginLogout(!loginLogout);
   };
+  // to connect to back-end API
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products/categories")
+      .then((res) => res.json())
+      .then((data) => {
+        setCategory(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="bg-light shadow-sm">
       <div className="container ">
@@ -22,23 +34,6 @@ function Header({ favorites, cartProducts }) {
                 Contact Us
               </Link>
             </li>
-            {/* <li>
-              <Link
-                to="/login"
-                className="nav-link px-2 link-dark"
-                onClick={changeLogin}
-              >
-                {!loginLogout ? (
-                  <button type="button" className="btn btn-info text-dark ">
-                    Log in
-                  </button>
-                ) : (
-                  <button type="button" className="btn  btn-warning ">
-                    Sign-up
-                  </button>
-                )}
-              </Link>
-            </li> */}
             <li className="nav-link px-2 link-dark" onClick={changeLogin}>
               {!loginLogout ? (
                 <button type="button" className="btn btn-info text-dark">
@@ -69,6 +64,15 @@ function Header({ favorites, cartProducts }) {
             </button>
           </div>
         </header>
+      </div>
+      <div className="text-center pb-1">
+      <ul>
+        <li className="list-unstyled d-inline">
+        {category.map((item) => (
+              <Link to="./" className="text-dark mx-2 text-decoration-none">{item}</Link>
+            ))}
+        </li>
+        </ul>
       </div>
     </div>
   );
