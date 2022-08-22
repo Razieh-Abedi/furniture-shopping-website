@@ -1,13 +1,14 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Header from "./components/Header";
+
+import Header from "./components/layout/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Checkout from "./pages/Checkout";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact"
 
 function App() {
   const [favorites, setFavorites] = useState(0);

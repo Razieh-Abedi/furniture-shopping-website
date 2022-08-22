@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Header({ favorites, cartProducts }) {
   //to change login/logout buttons
@@ -19,6 +20,16 @@ function Header({ favorites, cartProducts }) {
         console.log(error);
       });
   }, []);
+  //alert for clicking on singout button
+  const singoutAlert = () => {
+    Swal.fire({
+      position: "top-start",
+      icon: "success",
+      title: "You have successfully signed out",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
   return (
     <div className="bg-light shadow-sm">
       <div className="container ">
@@ -42,7 +53,11 @@ function Header({ favorites, cartProducts }) {
                   </Link>
                 </button>
               ) : (
-                <button type="button" className="btn  btn-warning ">
+                <button
+                  onClick={singoutAlert}
+                  type="button"
+                  className="btn  btn-warning "
+                >
                   <Link to="/" className="text-decoration-none text-dark">
                     Sing out
                   </Link>
@@ -66,12 +81,14 @@ function Header({ favorites, cartProducts }) {
         </header>
       </div>
       <div className="text-center pb-1">
-      <ul>
-        <li className="list-unstyled d-inline">
-        {category.map((item) => (
-              <Link to="./" className="text-dark mx-2 text-decoration-none">{item}</Link>
+        <ul>
+          <li className="list-unstyled d-inline">
+            {category.map((item) => (
+              <Link to="./" className="text-dark mx-2 text-decoration-none">
+                {item}
+              </Link>
             ))}
-        </li>
+          </li>
         </ul>
       </div>
     </div>

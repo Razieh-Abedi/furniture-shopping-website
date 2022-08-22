@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import "./Card.css";
 
 function Card({
   id,
@@ -99,28 +100,31 @@ function Card({
   };
 
   return (
-    <div className="col">
+    <div className="col ">
       <div
-        className="card text-center h-100"
+        className="card card-main text-center"
         id={id}
         style={borderStyle}
         onClick={changeStyle}
       >
         <img
           src={img}
-          className="card-img-top h-100 w-100"
+          className="card-img-top h-50 w-100"
           alt="image of a hotel room"
         />
-        <div className="card-body">
+        <div className="card-body h-50 d-flex flex-column justify-content-between">
           <h5 className="card-title fw-bold">{name}</h5>
-          <div className="d-flex justify-content-center my-2">
-            <a href="#" className="text-danger mx-2 " onClick={heartClick}>
-              {heartIcon}
-            </a>
-            <div className="likes">Liked by: {likes}</div>
+          <div>
+            <div className="d-flex justify-content-center my-2">
+              <a href="#" className="text-danger mx-2 " onClick={heartClick}>
+                {heartIcon}
+              </a>
+              <div className="likes">Liked by: {likes}</div>
+            </div>
+            <p>Price: {price} $</p>
           </div>
-          <p>Price: {price} $</p>
           <p className="card-text">{des}</p>
+          <div>
             <button
               className="btn btn-info w-50 m-auto"
               style={readMoreBtnStyle}
@@ -135,31 +139,35 @@ function Card({
             >
               Read Less
             </button>
-          <p style={textShowStyle}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Exercitationem distinctio, voluptate quisquam numquam blanditiis
-            repellendus ea consequatur. Repudiandae quasi, quis vero cum fugit
-            nulla error consequuntur, quo nobis, hic voluptatem.
-          </p>
-          <div>
-            <button
-              className={`btn btn-warning mx-auto w-100 my-2
-                 ${cartNumberState ? "d-none" : "d-block"}`}
-              onClick={clickedOnAddToCart}
-            >
-              Add To Cart
-            </button>
-            <div style={cartNumberStyle} className="my-2">
+            <p style={textShowStyle}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Exercitationem distinctio, voluptate quisquam numquam blanditiis
+              repellendus ea consequatur. Repudiandae quasi, quis vero cum fugit
+              nulla error consequuntur, quo nobis, hic voluptatem.
+            </p>
+            <div>
               <button
-                className="btn btn-warning px-3 fs-3 ms-2"
-                onClick={subtractCartCount}
+                className={`btn btn-warning mx-auto w-100 my-2
+                 ${cartNumberState ? "d-none" : "d-block"}`}
+                onClick={clickedOnAddToCart}
               >
-                -
+                Add To Cart
               </button>
-              <span className="btn btn-light px-3 fs-4 ms-2">{qty}</span>
-              <button className="btn btn-info px-3 fs-3 ms-2" onClick={addCartCount}>
-                +
-              </button>
+              <div style={cartNumberStyle} className="my-2">
+                <button
+                  className="btn btn-warning px-3 fs-3 ms-2"
+                  onClick={subtractCartCount}
+                >
+                  -
+                </button>
+                <span className="btn btn-light px-3 fs-4 ms-2">{qty}</span>
+                <button
+                  className="btn btn-info px-3 fs-3 ms-2"
+                  onClick={addCartCount}
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
         </div>
