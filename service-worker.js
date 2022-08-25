@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/furniture-shopping-website/precache-manifest.52ce68084a069f23b6f868b3beef2414.js"
+  "/furniture-shopping-website/precache-manifest.8a4f23da479fa9568d190ab9f96b3d87.js"
 );
 
 workbox.clientsClaim();
