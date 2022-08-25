@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./Header.css";
 
 function Header({ favorites, cartProducts }) {
   //to change login/logout buttons
