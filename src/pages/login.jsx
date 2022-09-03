@@ -1,16 +1,50 @@
 import React, { useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
+import loginValidation from "../validation/loginValidation";
 function Login() {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
   });
+
+  const [errorList, setErrorList] = useState([]);
+
   const formHandler = (e) => {
     e.preventDefault();
-    console.log(userInfo);
-    setUserInfo({ email: "", password: "",});
+
+    const errors=loginValidation(userInfo)
+    // debugger
+    setErrorList(errors);
+
+    if (errors.length==0) {
+      console.log(userInfo);
+      
+      fetch("https://fakestoreapi.com/auth/login",{
+        method:"post",
+        body: JSON.stringify(userInfo),
+        headers:{"Content-type": "Application/json"}
+      })
+      .then(res=>res.json())
+      .then(data=>console.log(data))
+      .catch(error=>console.log(error))
+
+      setUserInfo({ email: "", password: "" });
+    }
+    
   };
+  const displayErrors = (inputName) => {
+    const inputErrorList = errorList.filter((item) => item.input == inputName);
+    return inputErrorList.length ? (
+      <ul className="alert alert-danger">
+        {inputErrorList.map((item) =>
+          item.input === inputName ? <li>{item.message}</li> : ""
+        )}
+      </ul>
+    ) : (
+      ""
+    );
+  };
+
   return (
     <div className="container py-5 h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
@@ -19,8 +53,9 @@ function Login() {
             <form className="card-body p-5 text-center" onSubmit={formHandler}>
               <h3 className="mb-5 fs-1">Sign in</h3>
               <div class="form-floating mb-3">
+                <label for="floatingInput">Email address</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
                   id="floatingInput"
                   placeholder="name@example.com"
@@ -30,9 +65,10 @@ function Login() {
                     setUserInfo({ ...userInfo, email: e.target.value })
                   }
                 />
-                <label for="floatingInput">Email address</label>
+                <div>{displayErrors("email")}</div>
               </div>
               <div class="form-floating mb-3">
+                <label for="floatingPassword">Password</label>
                 <input
                   type="password"
                   class="form-control"
@@ -44,7 +80,7 @@ function Login() {
                     setUserInfo({ ...userInfo, password: e.target.value })
                   }
                 />
-                <label for="floatingPassword">Password</label>
+                <div>{displayErrors("password")}</div>
               </div>
               <div className="form-check d-flex justify-content-start mb-4">
                 <input
