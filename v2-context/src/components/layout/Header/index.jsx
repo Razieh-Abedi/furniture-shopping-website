@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import favoritesContext from "../../../contexts/favoritesContext";
 import QtyTotalContext from "../../../contexts/QtyTotalContext";
 import "./Header.css";
 
-function Header({ favorites }) {
+function Header() {
 
   const [qtyTotal]  = useContext(QtyTotalContext)
+  const [favorites] = useContext(favoritesContext)
   //to change login/logout buttons
   const [loginLogout, setLoginLogout] = useState(false);
   const changeLogin = () => {

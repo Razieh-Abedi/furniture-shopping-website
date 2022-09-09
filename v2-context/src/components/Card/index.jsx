@@ -1,19 +1,12 @@
 import React, { useState, useContext } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import favoritesContext from "../../contexts/favoritesContext";
 import QtyTotalContext from "../../contexts/QtyTotalContext";
 import "./Card.css";
 
-function Card({
-  id,
-  img,
-  price,
-  name,
-  des,
-  rate,
-  increaseFavorites,
-  decreaseFavorites,
-}) {
+function Card({ id, img, price, name, des, rate }) {
   const [qtyTotal, setQtyTotal] = useContext(QtyTotalContext);
+  const [favorites, setFavorites] = useContext(favoritesContext);
 
   //  To change the heart icon when liked
   const [heartState, setHeartState] = useState(false);
@@ -34,9 +27,9 @@ function Card({
   const heartClick = () => {
     changeLikes();
     if (!heartState) {
-      increaseFavorites();
+      setFavorites(favorites + 1);
     } else {
-      decreaseFavorites();
+      setFavorites(favorites - 1);
     }
     changeHeartIcon();
   };
